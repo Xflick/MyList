@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 template<class T>
 class MyList;
@@ -106,6 +107,7 @@ MyList<T>::MyList(int num, const T &item)
     catch(int err)
     {
         cout << "Num should be greater than 0.";
+        exit(-1);
     }
 
 }
@@ -164,6 +166,7 @@ T MyList<T>::pop()
     catch(int err)
     {
         cout << "Pop is not supported when array has no elements.";
+        exit(-1);
     }
 
 }
@@ -191,6 +194,7 @@ void MyList<T>::insert(int index, const T &item)
     catch(int err)
     {
         cout << "Invalid Index.";
+        exit(-1);
     }
 }
 
@@ -229,6 +233,7 @@ void MyList<T>::erase(int start, int end)
     catch(int err)
     {
         cout << "Invalid Start or End.";
+        exit(-1);
     }
 }
 
@@ -245,6 +250,7 @@ T MyList<T>::get_item(int index) const
     catch(int err)
     {
         cout << "Index out of range.";
+        exit(-1);
     }
 }
 
@@ -379,6 +385,7 @@ T &MyList<T>::operator [] (int index) const
     catch(int err)  //invalid index
     {
         cout << "Index out of range.";
+        exit(-1);
     }
 }
 
@@ -504,4 +511,3 @@ int main(){
 
 	return 0;
 }
-
